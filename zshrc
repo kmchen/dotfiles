@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/kmchen/.oh-my-zsh
+#export ZSH=/Users/kuangmingchen/.oh-my-zsh
+export ZSH=`pwd`/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -165,8 +166,8 @@ export HBASE_HOME=$PKGHOME/hbase-0.98.8-hadoop2
 export HBASE_BIN=$HBASE_HOME/bin
 
 # Source env.sh in $CSIPATH
-export CSIPATH=$GOPATH/src/htc.com/csi
-source $CSIPATH/env.sh
+#export CSIPATH=$GOPATH/src/htc.com/csi
+#source $CSIPATH/env.sh
 
 # ETCD export
 export ETCD_BIN=$PKGHOME/etcd2.1.1
@@ -174,10 +175,7 @@ export ETCD_BIN=$PKGHOME/etcd2.1.1
 export PATH=$PATH:$GOPATH:$GOROOT:$GOBIN:$ZK_BIN:$REDISBIN:$JAVA_HOME:$HBASE_HOME:$HBASE_BIN:$JAVA_BIN:$NODE_PATH:$ETCD_BIN
 
 # The next line updates PATH for the Google Cloud SDK.
-source $PKGHOME/google-cloud-sdk/path.zsh.inc
+#source $PKGHOME/google-cloud-sdk/path.zsh.inc
 
 # The next line enables shell command completion for gcloud.
-source $PKGHOME/google-cloud-sdk/completion.zsh.inc
-
-export NVM_DIR="/home/kmchen/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#source $PKGHOME/google-cloud-sdk/completion.zsh.inc
