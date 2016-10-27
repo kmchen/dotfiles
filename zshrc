@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 #export ZSH=/Users/kuangmingchen/.oh-my-zsh
-export ZSH=`pwd`/.oh-my-zsh
+export ZSH=`eval echo ~$USER`/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -104,7 +104,9 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lt='ls -ltr'
 alias grep='grep --color -n'
+alias myip='ipconfig getifaddr en0'
 alias untar='tar xzf'
+alias untarto='tar -C /usr/local -xzf'
 alias mktar='tar -cvzf'         # mktar destination.tar.gz file1 file2
 alias gst='git status --u=no'   # git status hide untracked files
 alias dk='sudo docker'         
@@ -123,6 +125,14 @@ alias gprod='gconf set project studio-csi-prod' # Gcloud set project to prod
 alias gdev='gconf set project studio-csi-dev' # Gcloud set project to dev
 alias ghealthdev='gconf set project studio-health-dev' # Gcloud set project to dev
 alias gssh='gcomp ssh csiuser@' # Gcloud ssh csiuser@instance-name
+#
+# ouest, (ou est le fichier) recursively finds the file with partial filename from current directory
+# Usage: ouest {file_type} {partial_filename}
+# $> ouest ts main
+ouest () {
+  find . -regex ".*\.\("$1"\)" | ag $2
+}
+
 # ssh
 # gcloud compute --project "studio-csi-dev" ssh --zone "us-central1-f" "ccloud-us-central1-f-the-walker-3v65"
 # gcomp ssh csiuser@ccloud-prod-csi-us-central1-f-zookeeper-0cc9
@@ -137,9 +147,13 @@ alias gotweb='go test -coverprofile=/tmp/coverage.out && go tool cover -html=/tm
 bindkey '^h' backward-word
 bindkey '^l' forward-word
 
-# Shell export
-export PKGHOME=/home/kmchen/package
-export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_51
+# Shell export Ubuntu
+export PKGHOME=/home/$USER/package
+
+# Java Home Ubuntu
+#export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_51
+# Java Home Mac OS
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home
 export JAVA_BIN=$JAVA_HOME/bin
 
 # Golang export
