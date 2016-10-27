@@ -47,6 +47,12 @@ Plugin 'functionlist.vim'
 " https://github.com/royriojas/esformatter-jsx
 Plugin 'royriojas/esformatter-jsx'
 
+"https://github.com/leafgarland/typescript-vim
+Plugin 'leafgarland/typescript-vim'
+
+"https://github.com/mileszs/ack.vim
+Plugin 'rking/ag.vim'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -119,7 +125,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 " Set Gotags location. e.g. gotags -R . > tags
-set tags=$CSIPATH/tags;/
+set tags=$CSIPAT/tags;/
 
 " Set make to go build
 set makeprg=go\ build
@@ -161,6 +167,7 @@ set tabstop=2
 set softtabstop=2
 "autocmd FileType javascript,jade,json set shiftwidth=2 tabstop=2 softtabstop=2
 set expandtab       " tabs are spaces
+set hlsearch        " highlight search
 
 " ----- Nerdtree ----- "
 "nmap means map in normal mode
@@ -171,3 +178,15 @@ set expandtab       " tabs are spaces
 "Without the nore, the above mapping will loop.
 nnoremap <F5> :NERDTreeToggle<CR>
 "map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+let g:go_fmt_command = "GoImports"
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+autocmd FileType typescript :set makeprg=tsc
+
+"set tags=~/package/tags
