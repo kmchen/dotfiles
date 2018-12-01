@@ -191,6 +191,7 @@ autocmd FileType typescript :set makeprg=tsc
 
 "set tags=~/package/tags
 
+" Use ctrl-j, ctrl-k, ctrl-l, ctrl-h to move between split windows
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
