@@ -190,3 +190,8 @@ au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 autocmd FileType typescript :set makeprg=tsc
 
 "set tags=~/package/tags
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
