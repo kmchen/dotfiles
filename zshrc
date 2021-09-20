@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-# fasd
+# fasd https://github.com/clvv/fasd
 # eval "$(fasd --init auto)"
 eval "$(fasd --init posix-alias zsh-hook)"
 alias a='fasd -a'        # any
